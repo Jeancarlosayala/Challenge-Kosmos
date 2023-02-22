@@ -87,6 +87,7 @@ const App = () => {
           background: "black",
           height: "80vh",
           width: "80vw",
+          overflow: 'hidden'
         }}
       >
         {moveableComponents.map((item, index) => (
@@ -185,11 +186,12 @@ const Component = ({
     const positionMaxTop = top + newHeight;
     const positionMaxLeft = left + newWidth;
 
+
     if (positionMaxTop > parentBounds?.height)
       newHeight = parentBounds?.height - top;
     if (positionMaxLeft > parentBounds?.width)
       newWidth = parentBounds?.width - left;
-
+      
     // const { lastEvent } = e;
     // const { drag } = lastEvent;
     // const { beforeTranslate } = drag;
@@ -198,6 +200,7 @@ const Component = ({
     // const absoluteLeft = left + beforeTranslate[0];
     const absoluteTop = top;
     const absoluteLeft = left;
+
 
     updateMoveable(
       id,
